@@ -20,6 +20,7 @@ highlight_themes_css = [
 
 [extra]
 date_format="%d %b, %Y"
+mathjax = true
 
 [[extra.main_menu]]
 name = "Blog"

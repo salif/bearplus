@@ -23,6 +23,20 @@
   <link rel="stylesheet" type="text/css" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)" />
 
   <link rel="stylesheet" type="text/css" href="/style.css" />
+
+  {% if config.extra.mathjax | default(value=false) %}
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  {% endif %}
 </head>
 <body>
   {% include "header.html" ignore missing -%}
