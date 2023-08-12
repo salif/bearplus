@@ -1,6 +1,6 @@
 +++
 title = "Markdown Syntax Guide"
-date = "2023-08-12"
+date = "2021-04-20"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 taxonomies.tags = [
     "markdown",
