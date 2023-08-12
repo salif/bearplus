@@ -7,7 +7,7 @@ Minimalistic yet a bit featureful theme for Zola, based on Bear Blog.
 If you already have a Zola site on your machine, you can simply add this theme via
 
 ```
-git submodule add https://codeberg.org/alanpearce/zola-bearblog themes/zola-bearblog
+git submodule add https://salcc.github.io/zola-bearplus themes/bearplus
 ```
 
 ## Acknowledgements
