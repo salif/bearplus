@@ -93,6 +93,16 @@ ul.blog-posts li span {
   flex: 0 0 130px;
 }
 
+/* Footnotes */
+.footnote-definition:target {
+  background-color: lightyellow;
+}
+
+/* Fix https://github.com/getzola/zola/issues/1070 */
+.footnote-definition p {
+  display: inline;
+}
+
 @media (prefers-color-scheme: dark) {
 
   body,
@@ -104,4 +114,15 @@ ul.blog-posts li span {
   a {
     color: skyblue;
   }
+
+  /* Footnotes */
+  .footnote-definition:target {
+    background-color: gold;
+    color: black;
+  }
+
+  .footnote-definition:target a {
+    color: royalblue;
+  }
 }
+

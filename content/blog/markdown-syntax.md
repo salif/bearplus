@@ -8,7 +8,8 @@ taxonomies.tags = [
 ]
 +++
 
-This article offers a sample of basic Markdown syntax that can be used in Zola content files, also it shows whether basic HTML elements are decorated with CSS in a Zola theme.
+This article offers a sample of basic Markdown syntax that can be used in Zola content files,
+also it shows whether basic HTML elements are decorated with CSS in a Zola theme.
 
 ## Headings
 
@@ -51,11 +52,8 @@ and optionally with in-line changes such as annotations and abbreviations.
 
 #### Blockquote with attribution
 
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
 > All men by nature desire to know.<br>
-> ― <cite>Aristotle[^2]</cite>
+> ― <cite>Aristotle[^1]</cite>
 
 ## Tables
 
@@ -156,11 +154,10 @@ Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the
 session.
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and
-other small creatures.
+other small creatures.[^2]
 
 ---
 <!-- Note: There must be a blank line between every two lines of the footnote difinition.  -->
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c)
-during Gopherfest, November 18, 2015.
+[^1]: Aristotle. "Metaphysics". Translated by W. D. Ross. The Internet Classics Archive, 350 B.C.E. <https://classics.mit.edu/Aristotle/metaphysics.html>. Accessed 12 August 2023.
 
-[^2]: The quote is the first sentence of Aristotle's [Metaphysics](http://classics.mit.edu/Aristotle/metaphysics.html).
+[^2]: The Editors of Encyclopaedia Britannica. "salamander". Encyclopedia Britannica, 23 Jun. 2023, <https://www.britannica.com/animal/salamander>. Accessed 12 August 2023.
