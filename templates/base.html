@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% include "favicon.html" ignore missing -%}
+  {% if config.extra.favicon %}
+    <link rel="shortcut icon" href="{{ config.extra.favicon }}">
+  {%- endif -%}
   <title>{%- block title %}{{ config.title }}{%- endblock %}</title>
-  {% include "seo_tags.html" ignore missing %}
+  <meta name="title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}">
   <meta name="referrer" content="no-referrer-when-downgrade">
   {%- if config.generate_feed %}
     {% block rss -%}
