@@ -1,11 +1,8 @@
-title = "Zola ʕ•ᴥ•ʔ Bear Blog"
-base_url = "https://alanpearce.codeberg.page/zola-bearblog"
-description = ""
+title = "Zola Bear+ Blog Theme"
+base_url = "https://salcc.github.io/zola-bearplus"
+description = "Minimalistic yet a bit featureful theme for Zola, based on Bear Blog"
 
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
-
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
 taxonomies = [
@@ -14,20 +11,15 @@ taxonomies = [
 ]
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
+highlight_theme = "css"
+highlight_themes_css = [
+  { theme = "OneHalfDark", filename = "syntax-theme-dark.css" },
+  { theme = "OneHalfLight", filename = "syntax-theme-light.css" },
+]
 
 [extra]
 date_format="%d %b, %Y"
-
-[[extra.main_menu]]
-name = "Bear"
-url = "@/bear.md"
-
-[[extra.main_menu]]
-name = "Zola"
-url = "@/zola.md"
 
 [[extra.main_menu]]
 name = "Blog"
