@@ -1,4 +1,4 @@
-title = "Zola Bear+ Blog Theme"
+title = "Zola Bear+ Theme"
 base_url = "https://salcc.github.io/zola-bearplus"
 description = "Minimalistic yet a bit featureful theme for Zola, based on Bear Blog"
 
@@ -25,3 +25,7 @@ mathjax = true
 [[extra.main_menu]]
 name = "Blog"
 url = "@/blog/_index.md"
+
+[[extra.main_menu]]
+name = "GitHub"
+url = "https://github.com/salcc/zola-bearplus"

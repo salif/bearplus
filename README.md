@@ -1,4 +1,4 @@
-# Zola Bear+ Blog Theme
+# Zola Bear+ Theme
 
 ## Installation
 
