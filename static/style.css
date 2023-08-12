@@ -43,6 +43,12 @@ article {
   line-height: 1.6;
 }
 
+hr {
+  border: 0;
+  border-top: 1px solid gray;
+  margin: 1em 0;
+}
+
 table {
   width: 100%;
 }
@@ -125,4 +131,3 @@ ul.blog-posts li span {
     color: royalblue;
   }
 }
-
