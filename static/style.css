@@ -117,6 +117,10 @@ ul.blog-posts li span {
     color: white;
   }
 
+  pre {
+    background-color: #050505 !important;
+  }
+
   a {
     color: skyblue;
   }
