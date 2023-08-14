@@ -6,6 +6,6 @@ description = "A photo of a bear"
 
 Just that. A photo of a bear.
 
-![A photo of a bear](/bear.jpg)
+![A photo of a bear](bear.jpg)
 
 By the way, the photo is in the public domain.
