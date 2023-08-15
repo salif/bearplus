@@ -1,0 +1,10 @@
+{% set chart_script = load_data(path=page.colocated_path ~ js_file, format="plain") %}
+
+<div id="{{ js_file }}" style="width: {{ width|default(value="100%") }}; height: {{ height|default(value="400px") }};"></div>
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var chart = echarts.init(document.getElementById('{{ js_file }}'));
+    {{ chart_script | safe }}
+    chart.setOption(option);
+  });
+</script>
