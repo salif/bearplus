@@ -98,8 +98,10 @@ ul.blog-posts {
   }
 }
 
-.footnote-definition:target {
-  background-color: lightyellow;
+.footnote-definition {
+  &:target {
+    background-color: lightyellow;
+  }
 
   p {
     display: inline;  // Fix https://github.com/getzola/zola/issues/1070
