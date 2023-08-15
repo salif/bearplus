@@ -2,7 +2,7 @@ title = "Zola Bear+ Theme"
 base_url = "https://salcc.github.io/zola-bearplus"
 description = "Minimalistic yet a bit featureful theme for Zola, based on Bear Blog"
 
-compile_sass = false
+compile_sass = true
 build_search_index = false
 
 taxonomies = [
@@ -19,6 +19,7 @@ highlight_themes_css = [
 
 [extra]
 date_format="%d %b, %Y"
+theme_toggle = true
 mathjax = true
 echarts = true
 

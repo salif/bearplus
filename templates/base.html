@@ -19,19 +19,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="/syntax-theme-dark.css" media="(prefers-color-scheme: dark)" />
-  <link rel="stylesheet" type="text/css" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)" />
-
+  <link id="syntax-theme-stylesheet" rel="stylesheet" type="text/css" href="/syntax-theme-light.css" />
   <link rel="stylesheet" type="text/css" href="/style.css" />
+
+  <script>
+    /* Dark mode toggle */
+
+    document.addEventListener("DOMContentLoaded", function () {
+      function setTheme(theme) {
+        document.body.classList.toggle("dark-theme", theme === "dark");
+        document.getElementById("syntax-theme-stylesheet").href = "/syntax-theme-" + theme + ".css";
+        localStorage.setItem("theme", theme);
+      }
+
+      let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      setTheme(theme);
+
+      {% if config.extra.theme_toggle | default (value = true) %}
+        document.getElementById("theme-toggle").addEventListener("click", function (event) {
+          event.preventDefault();
+          theme = theme === "dark" ? "light" : "dark";
+          setTheme(theme);
+        });
+      {% endif %}
+    });
+  </script>
 
   <script>
     /* Add footnote backlinks (code from https://github.com/getzola/zola/issues/1070#issuecomment-1166637092) */
 
-    // The DOMContentLoaded event fires when the initial HTML
-    // document has been completely loaded and parsed, without
-    // waiting for stylesheets, images, and subframes to finish loading.
-    document.addEventListener('DOMContentLoaded', (_event) => {
-
+    document.addEventListener('DOMContentLoaded', () => {
       const references = document.getElementsByClassName('footnote-reference')
       // For each footnote reference, set an id so we can refer to it from the definition.
       // If the definition had an id of 'some_id', then the reference has id `some_id_ref`.
