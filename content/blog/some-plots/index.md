@@ -10,7 +10,7 @@ For example, here's the [Anscombe's quartet](https://en.wikipedia.org/wiki/Ansco
 
 {{ echarts(js_file="anscombes_quartet.js" height="500px") }}
 
-And here's a plot of the [Klein bottle immersed in three-dimensional space](https://en.wikipedia.org/wiki/Klein_bottle#Bottle_shape):
+And here's a plot of the [Klein bottle immersed in three-dimensional space](https://en.wikipedia.org/wiki/Klein_bottle):
 
 {{ echarts(js_file="klein_bottle.js" height="500px") }}
 

@@ -39,7 +39,10 @@ var option = {
     {
       type: 'surface',
       parametric: true,
-      shading: 'realistic',
+      shading: 'color',
+      itemStyle: {
+        opacity: 0.6
+      },
       parametricEquation: {
         u: {
           min: -0.1,
