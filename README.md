@@ -12,4 +12,4 @@ git submodule add https://github.com/salcc/zola-bearplus themes/bearplus
 
 ## Acknowledgements
 
-A special thank you goes out to [Herman](https://herman.bearblog.dev), for creating the original [ʕ•ᴥ•ʔ Bear Blog](https://bearblog.dev/), [Jan Raasch](https://www.janraasch.com) for creating the Hugo port of the Bear Blog theme, and [Alan Pearce](https://alanpearce.eu) for creating the Zola port of the Bear Blog theme.
+A special thank you goes out to [Herman](https://herman.bearblog.dev), for creating the original [ʕ•ᴥ•ʔ Bear Blog](https://bearblog.dev/), [Jan Raasch](https://www.janraasch.com) for creating the [Hugo port of the Bear Blog theme](https://themes.gohugo.io/themes/hugo-bearblog/), and [Alan Pearce](https://alanpearce.eu) for creating the [Zola port of the Bear Blog theme](https://alanpearce.codeberg.page/zola-bearblog/).
