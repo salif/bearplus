@@ -2,6 +2,9 @@
 title = "Some Plots"
 date = "2023-08-15"
 description = "Some plots created with Apache ECharts"
+taxonomies.tags = [
+    "syntax",
+]
 +++
 
 The theme also has support for charts created with [Apache ECharts](https://echarts.apache.org/).

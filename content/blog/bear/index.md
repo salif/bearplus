@@ -2,6 +2,9 @@
 title = "A Photo of a Bear"
 date = "2023-08-12"
 description = "A photo of a bear"
+taxonomies.tags = [
+    "syntax",
+]
 +++
 
 Just that. A photo of a bear.
