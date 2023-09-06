@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% import "macros.html" as macros %}
+
 {% block title %}{{ page.title }} | {{ super() }}{% endblock %}
 
 {% block main %}
@@ -16,7 +18,7 @@
     {%- endif %}
   {%- endif %}
   <main>
-    {{ page.content | safe }}
+    {{ page.content | replace(from="<!-- toc -->", to=macros::toc(toc=page.toc))  | safe }}
   </main>
   <p>
     {%- if page.taxonomies %}
