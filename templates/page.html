@@ -18,7 +18,9 @@
     {%- endif %}
   {%- endif %}
   <main>
-    {{ page.content | replace(from="<!-- toc -->", to=macros::toc(toc=page.toc))  | safe }}
+    <article>
+      {{ page.content | replace(from="<!-- toc -->", to=macros::toc(toc=page.toc))  | safe }}
+    </article>
   </main>
   <p>
     {%- if page.taxonomies %}
