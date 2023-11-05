@@ -136,6 +136,10 @@ body.dark-theme {
       color: royalblue;
     }
   }
+
+  .inverse {
+    filter: invert(1);
+  }
 }
 
 header {
