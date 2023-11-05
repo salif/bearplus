@@ -18,7 +18,8 @@ highlight_themes_css = [
 ]
 
 [extra]
-date_format="%d %b, %Y"
+post_date_format="%d %B, %Y"
+list_date_format="%d %b, %Y"
 theme_toggle = true
 mathjax = true
 echarts = true
