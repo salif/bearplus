@@ -25,24 +25,24 @@
   <script>
     /* Dark mode toggle */
 
-    document.addEventListener("DOMContentLoaded", function () {
-      function setTheme(theme) {
-        document.body.classList.toggle("dark-theme", theme === "dark");
-        document.getElementById("syntax-theme-stylesheet").href = "/syntax-theme-" + theme + ".css";
-        localStorage.setItem("theme", theme);
-      }
+    function setTheme(theme) {
+      document.documentElement.classList.toggle("dark-theme", theme === "dark");
+      document.getElementById("syntax-theme-stylesheet").href = "/syntax-theme-" + theme + ".css";
+      localStorage.setItem("theme", theme);
+    }
 
-      let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-      setTheme(theme);
+    let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    setTheme(theme);
 
-      {% if config.extra.theme_toggle | default (value = true) %}
+    {% if config.extra.theme_toggle | default (value = true) %}
+      document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("theme-toggle").addEventListener("click", function (event) {
           event.preventDefault();
           theme = theme === "dark" ? "light" : "dark";
           setTheme(theme);
         });
-      {% endif %}
-    });
+      });
+    {% endif %}
   </script>
 
   <script>

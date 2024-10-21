@@ -1,5 +1,6 @@
 html {
   scrollbar-gutter: stable both-edges;
+  background-color: white;
 }
 
 body {
@@ -8,7 +9,6 @@ body {
   padding: 20px;
   max-width: 720px;
   text-align: left;
-  background-color: white;
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.5;
@@ -121,11 +121,13 @@ ul.blog-posts {
 }
 
 // Dark theme
-body.dark-theme {
+html.dark-theme {
   background-color: black;
 
-  &, .title, #theme-toggle {
-    color: white;
+  body {
+    &, .title, #theme-toggle {
+      color: white;
+    }
   }
 
   pre {
