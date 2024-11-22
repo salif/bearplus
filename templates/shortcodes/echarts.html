@@ -27,10 +27,9 @@
         });
       }
 
-      echartsLoader.loadPromise = Promise.all([
-        loadScript('https://cdn.jsdelivr.net/npm/echarts@latest/dist/echarts.min.js'),
-        loadScript('https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js')
-      ]);
+      // Load echarts first, then echarts-gl
+      echartsLoader.loadPromise = loadScript('https://cdn.jsdelivr.net/npm/echarts@latest/dist/echarts.min.js')
+        .then(() => loadScript('https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js'));
 
       return echartsLoader.loadPromise;
     }
