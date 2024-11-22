@@ -1,5 +1,5 @@
 name = "Bear+"
-description = "Minimalistic yet a bit featureful theme for Zola, based on Bear Blog"
+description = "Minimalistic yet a bit featureful theme for the Zola static site generator."
 license = "MIT"
 homepage = "https://salcc.github.io/zola-bearplus"
 

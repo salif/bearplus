@@ -1,6 +1,6 @@
 title = "Zola Bear+ Theme"
 base_url = "https://salcc.github.io/zola-bearplus"
-description = "Minimalistic yet a bit featureful theme for Zola, based on Bear Blog"
+description = "Minimalistic yet a bit featureful theme for the Zola static site generator."
 
 compile_sass = true
 build_search_index = false
