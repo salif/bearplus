@@ -31,18 +31,6 @@
       document.documentElement.classList.toggle("dark-theme", theme === "dark");
       document.getElementById("syntax-theme-stylesheet").href = "/syntax-theme-" + theme + ".css";
       localStorage.setItem("theme", theme);
-
-      // Update the favicon based on the theme (only if faviconLink exists)
-      updateFavicon(theme);
-    }
-
-    function updateFavicon(theme) {
-      let faviconLink = document.getElementById("favicon");
-      if (faviconLink) { // Check if faviconLink exists
-        let color = theme === "dark" ? "white" : "black"; 
-        let faviconDataURI = ``;
-        faviconLink.href = faviconDataURI;
-      }
     }
 
     let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
