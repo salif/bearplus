@@ -2,9 +2,55 @@
 
 <div id="{{ js_file }}" style="width: {{ width|default(value="100%") }}; height: {{ height|default(value="400px") }};"></div>
 <script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var chart = echarts.init(document.getElementById('{{ js_file }}'));
-    {{ chart_script | safe }}
-    chart.setOption(option);
-  });
+  (function() {
+    window.echartsLoader = window.echartsLoader || {
+      loadPromise: null
+    };
+
+    function loadEchartsLibraries() {
+      if (echartsLoader.loadPromise) {
+        return echartsLoader.loadPromise;
+      }
+
+      function loadScript(url) {
+        return new Promise((resolve, reject) => {
+          if (document.querySelector(`script[src="${url}"]`)) {
+            resolve();
+            return;
+          }
+          const script = document.createElement('script');
+          script.defer = true;
+          script.src = url;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      }
+
+      echartsLoader.loadPromise = Promise.all([
+        loadScript('https://cdn.jsdelivr.net/npm/echarts@latest/dist/echarts.min.js'),
+        loadScript('https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js')
+      ]);
+
+      return echartsLoader.loadPromise;
+    }
+
+    async function initChart() {
+      try {
+        await loadEchartsLibraries();
+        const chart = echarts.init(document.getElementById('{{ js_file }}'));
+        {{ chart_script | safe }}
+        chart.setOption(option);
+        window.addEventListener('resize', () => chart.resize());
+      } catch (error) {
+        console.error('Failed to initialize chart:', error);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initChart);
+    } else {
+      initChart();
+    }
+  })();
 </script>
