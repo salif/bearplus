@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% if config.extra.favicon %}
     <link rel="shortcut icon" href="{{ config.extra.favicon }}">
+  {% else %}
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.55em' font-size='180' fill='gray'>●</text></svg>">
   {%- endif -%}
   <title>{%- block title %}{{ config.title }}{%- endblock %}</title>
   <meta name="title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}">
@@ -29,6 +31,18 @@
       document.documentElement.classList.toggle("dark-theme", theme === "dark");
       document.getElementById("syntax-theme-stylesheet").href = "/syntax-theme-" + theme + ".css";
       localStorage.setItem("theme", theme);
+
+      // Update the favicon based on the theme (only if faviconLink exists)
+      updateFavicon(theme);
+    }
+
+    function updateFavicon(theme) {
+      let faviconLink = document.getElementById("favicon");
+      if (faviconLink) { // Check if faviconLink exists
+        let color = theme === "dark" ? "white" : "black"; 
+        let faviconDataURI = ``;
+        faviconLink.href = faviconDataURI;
+      }
     }
 
     let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
