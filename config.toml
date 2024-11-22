@@ -21,7 +21,7 @@ highlight_themes_css = [
 post_date_format="%d %B, %Y"
 list_date_format="%d %b, %Y"
 theme_toggle = true
-mathjax = true
+render_latex = true
 echarts = true
 
 [[extra.main_menu]]

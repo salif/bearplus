@@ -74,15 +74,23 @@
     });
   </script>
 
-  {% if config.extra.mathjax | default(value=false) %}
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        }
-      };
+  {% if config.extra.render_latex | default(value=false) %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "\\[", right: "\\]", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\(", right: "\\)", display: false }
+          ]
+        });
+      });
     </script>
-    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   {% endif %}
 
   {% if config.extra.echarts | default(value=false) %}
