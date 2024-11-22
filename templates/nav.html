@@ -1,10 +1,12 @@
-<a href="{{ config.base_url }}">Home</a>
-{%- if config.extra.main_menu %}
-  {%- for item in config.extra.main_menu %}
-    {%- if item.url is matching("https?://") %}
-      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
-    {%- else %}
-      <a href="{{ get_url(path=item.url )}}">{{ item.name }}</a>
-    {%- endif %}
-  {%- endfor %}
-{%- endif -%}
+<nav>
+  <a href="{{ config.base_url }}">Home</a>
+  {%- if config.extra.main_menu %}
+    {%- for item in config.extra.main_menu %}
+    {%- if item.url is matching("^(https?://|mailto:)") %}
+        <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+      {%- else %}
+        <a href="{{ get_url(path=item.url )}}">{{ item.name }}</a>
+      {%- endif %}
+    {%- endfor %}
+  {%- endif -%}
+</nav>
