@@ -21,6 +21,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
+  {% if config.extra.fa_icons | default(value=false) %}
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+  {% endif %}
+
   <link id="syntax-theme-stylesheet" rel="stylesheet" type="text/css" href="/syntax-theme-light.css" />
   <link rel="stylesheet" type="text/css" href="/style.css" />
 

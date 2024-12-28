@@ -21,6 +21,7 @@ highlight_themes_css = [
 post_date_format="%d %B, %Y"
 list_date_format="%d %b, %Y"
 theme_toggle = true
+fa_icons = true
 render_latex = true
 echarts = true
 
@@ -30,4 +31,5 @@ url = "@/blog/_index.md"
 
 [[extra.main_menu]]
 name = "GitHub"
+icon = "fa-brands fa-github"
 url = "https://github.com/salcc/zola-bearplus"
