@@ -12,6 +12,10 @@ jobs:
     steps:
     - name: Checkout main
       uses: actions/checkout@v3.0.0
+    - name: Create static directory and CNAME
+      run: |
+        mkdir -p static
+        echo "theme.xn--maral-0ra.cc" > static/CNAME
     - name: Build and deploy
       uses: shalzz/zola-deploy-action@v0.19.2
       env:
