@@ -1,5 +1,5 @@
 title = "Zola Bear+ Theme"
-base_url = "https://marçal.cc/zola-bearplus"
+base_url = "https://theme.marçal.cc"
 description = "Minimalistic yet a bit featureful theme for the Zola static site generator."
 
 compile_sass = true

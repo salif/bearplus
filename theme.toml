@@ -1,10 +1,10 @@
 name = "Bear+"
 description = "Minimalistic yet a bit featureful theme for the Zola static site generator."
 license = "MIT"
-homepage = "https://marçal.cc/zola-bearplus"
+homepage = "https://theme.marçal.cc"
 
 min_version = "0.17.2"
-demo = "https://marçal.cc/zola-bearplus"
+demo = "https://theme.marçal.cc"
 
 [author]
 name = "Marçal Comajoan Cara"
