@@ -29,15 +29,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/fontawesome.min.css">
   {% endif %}
 
-  <link id="syntax-theme-stylesheet" rel="stylesheet" type="text/css" href="/syntax-theme-light.css" />
-  <link rel="stylesheet" type="text/css" href="/style.css" />
+  <link id="syntax-theme-stylesheet" rel="stylesheet" type="text/css" href="{{ config.base_url }}/syntax-theme-light.css" />
+  <link rel="stylesheet" type="text/css" href="{{ config.base_url }}/style.css" />
 
   <script>
     /* Dark mode toggle */
 
     function setTheme(theme) {
       document.documentElement.classList.toggle("dark-theme", theme === "dark");
-      document.getElementById("syntax-theme-stylesheet").href = "/syntax-theme-" + theme + ".css";
+      document.getElementById("syntax-theme-stylesheet").href = "{{ config.base_url }}/syntax-theme-" + theme + ".css";
       localStorage.setItem("theme", theme);
     }
 
