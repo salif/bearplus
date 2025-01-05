@@ -18,8 +18,8 @@ highlight_themes_css = [
 ]
 
 [extra]
-post_date_format="%d %B, %Y"
-list_date_format="%d %b, %Y"
+post_date_format="%d %B %Y"
+list_date_format="%d %b %Y"
 theme_toggle = true
 fa_icons = true
 render_latex = true
