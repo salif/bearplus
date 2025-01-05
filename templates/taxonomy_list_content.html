@@ -1,0 +1,11 @@
+<a class="title" href="/{{ taxonomy.name }}">
+  <h3>{{ taxonomy.name | capitalize }}</h3>
+</a>
+<small>
+  <div>
+    {% set tags = get_taxonomy(kind="tags") %}
+    {% for post in tags.items %}
+      <a href="{{ post.permalink }}">#{{ post.name }}</a>&nbsp;
+    {% endfor %}
+  </div>
+</small>

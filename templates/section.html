@@ -2,13 +2,10 @@
 
 {% block main %}
   <main>
-    {%- if taxonomy.term %}
-      <h3 style="margin-bottom:0">Filtering for "{{ section.title }}"</h3>
-      <small>
-        <a href="{{ get_url(path="@/blog/_index.md") }}">Remove filter</a>
-      </small>
-    {%- endif %}
-    <ul class="blog-posts">
+    <a class="title" href="/{{ section.title }}">
+      <h3>{{ section.title | capitalize }}</h3>
+    </a>
+    <ul class="pages-list">
       {% for page in section.pages %}
         <li>
           <span>
@@ -26,13 +23,16 @@
         </li>
       {% endfor %}
     </ul>
-    <small>
-      <div>
-        {% set tags = get_taxonomy(kind="tags") %}
-        {% for post in tags.items %}
-          <a href="{{ post.permalink }}">#{{ post.name }}</a>&nbsp;
-        {% endfor %}
-      </div>
-    </small>
+    {% for taxon in config.taxonomies %}
+      {% if taxon.name == "tags" %}
+      <small>
+          {{ taxon.name | capitalize }}:
+          {% set tags = get_taxonomy(kind="tags") %}
+          {% for post in tags.items %}
+            <a href="{{ post.permalink }}">#{{ post.name }}</a>&nbsp;
+          {% endfor %}
+      </small>
+      {% endif %}
+    {% endfor %}
   </main>
 {% endblock %}

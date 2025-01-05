@@ -2,13 +2,11 @@
 
 {% block main %}
   <main>
-    {%- if taxonomy.term %}
-      <h3 style="margin-bottom:0">Filtering for "{{ term.name }}"</h3>
-      <small>
-        <a href="{{ get_url(path="@/blog/_index.md") }}">Remove filter</a>
-      </small>
+    {% include "taxonomy_list_content.html" -%}
+    {%- if term %}
+      <h4>Filtering for #{{ term.name }}</h4>
     {%- endif %}
-    <ul class="blog-posts">
+    <ul class="pages-list">
       {% for page in term.pages %}
         <li>
           <span>
