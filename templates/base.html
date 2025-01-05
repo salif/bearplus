@@ -4,6 +4,7 @@
   {% if current_path %}
     <link rel="canonical" href="{{ config.base_url }}{{ current_path }}" />
   {% endif %}
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% if config.extra.favicon %}
@@ -13,7 +14,6 @@
   {%- endif -%}
   <title>{%- block title %}{{ config.title }}{%- endblock %}</title>
   <meta name="title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}">
-  <meta name="referrer" content="no-referrer-when-downgrade">
   {%- if config.generate_feed %}
     {% block rss -%}
       <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="{{ config.title }}" href="{{ get_url(path=config.feed_filename) | safe }}">
