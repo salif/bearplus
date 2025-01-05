@@ -1,6 +1,17 @@
+:root {
+  color-scheme: light dark;
+  --background: white;
+  --text: black;
+  --link: royalblue;
+  --pre-background: initial;
+  --pre-color: initial;
+  --highlight-background: lightyellow;
+  --border-color: gray;
+}
+
 html {
   scrollbar-gutter: stable both-edges;
-  background-color: white;
+  background-color: var(--background);
 }
 
 body {
@@ -12,17 +23,17 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.5;
-  color: black;
+  color: var(--text);
 }
 
 a {
-  color: royalblue;
+  color: var(--link);
 }
 
 .title {
   text-decoration: none;
   border: 0;
-  color: black;
+  color: var(--text);
 
   span {
     font-weight: 400;
@@ -57,7 +68,7 @@ br {
 
 hr {
   border: 0;
-  border-top: 1px solid gray;
+  border-top: 1px solid var(--border-color);
   margin: 1em 0;
 }
 
@@ -70,8 +81,8 @@ img {
 }
 
 div.highlight pre {
-  background-color: initial;
-  color: initial;
+  background-color: var(--pre-background) !important;
+  color: var(--pre-color);
 }
 
 div.highlight code {
@@ -104,43 +115,11 @@ ul.blog-posts {
 
 .footnote-definition {
   &:target {
-    background-color: lightyellow;
+    background-color: var(--highlight-background);
   }
 
   p {
-    display: inline;  // Fix https://github.com/getzola/zola/issues/1070
-  }
-}
-
-// Dark theme
-html.dark-theme {
-  background-color: black;
-
-  body {
-    &, .title, #theme-toggle {
-      color: white;
-    }
-  }
-
-  pre {
-    background-color: #111111 !important;
-  }
-
-  a {
-    color: skyblue;
-  }
-
-  .footnote-definition:target {
-    background-color: gold;
-    color: black;
-
-    a {
-      color: royalblue;
-    }
-  }
-
-  .inverse {
-    filter: invert(1);
+    display: inline; // Fix https://github.com/getzola/zola/issues/1070
   }
 }
 
@@ -154,6 +133,7 @@ header {
     align-items: center;
 
     #theme-toggle {
+      color: var(--text);
       background: none;
       border: none;
       cursor: pointer;
@@ -164,3 +144,24 @@ header {
   }
 }
 
+// Dark theme
+html.dark-theme {
+  --background: black;
+  --text: white;
+  --link: skyblue;
+  --pre-background: #111111;
+  --highlight-background: gold;
+
+  .footnote-definition:target {
+    background-color: var(--highlight-background);
+    color: black;
+
+    a {
+      color: royalblue;
+    }
+  }
+
+  .inverse {
+    filter: invert(1);
+  }
+}
