@@ -1,55 +1,18 @@
 {% set chart_script = load_data(path=page.colocated_path ~ js_file, format="plain") %}
 
-<div id="{{ js_file }}" style="width: {{ width|default(value="100%") }}; height: {{ height|default(value="400px") }};"></div>
-<script type="text/javascript">
-  (function() {
-    window.echartsLoader = window.echartsLoader || {
-      loadPromise: null
-    };
+<div id="{{ js_file }}" style="width: {{ width | default(value="100%") }}; height: {{ height | default(value="400px") }};"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"
+  integrity="sha512-XSmbX3mhrD2ix5fXPTRQb2FwK22sRMVQTpBP2ac8hX7Dh/605hA2QDegVWiAvZPiXIxOV0CbkmUjGionDpbCmw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts-gl/2.0.8/echarts-gl.min.js"
+  integrity="sha512-BU2/2iqpnDMN4hyqWPLo5MsqlkOF2xOVC8we4iZVZ7xhGfkk7tSiLnxPJb0xZrbhjmtb7qBQ7w3WdAtF13b1sQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 
-    function loadEchartsLibraries() {
-      if (echartsLoader.loadPromise) {
-        return echartsLoader.loadPromise;
-      }
-
-      function loadScript(url) {
-        return new Promise((resolve, reject) => {
-          if (document.querySelector(`script[src="${url}"]`)) {
-            resolve();
-            return;
-          }
-          const script = document.createElement('script');
-          script.defer = true;
-          script.src = url;
-          script.onload = resolve;
-          script.onerror = reject;
-          document.head.appendChild(script);
-        });
-      }
-
-      // Load echarts first, then echarts-gl
-      echartsLoader.loadPromise = loadScript('https://cdn.jsdelivr.net/npm/echarts@latest/dist/echarts.min.js')
-        .then(() => loadScript('https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js'));
-
-      return echartsLoader.loadPromise;
-    }
-
-    async function initChart() {
-      try {
-        await loadEchartsLibraries();
-        const chart = echarts.init(document.getElementById('{{ js_file }}'));
-        {{ chart_script | safe }}
-        chart.setOption(option);
-        window.addEventListener('resize', () => chart.resize());
-      } catch (error) {
-        console.error('Failed to initialize chart:', error);
-      }
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initChart);
-    } else {
-      initChart();
-    }
-  })();
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const chart = echarts.init(document.getElementById('{{ js_file }}'));
+    {{ chart_script | safe }}
+    chart.setOption(option);
+    window.addEventListener('resize', () => chart.resize());
+   });
 </script>
