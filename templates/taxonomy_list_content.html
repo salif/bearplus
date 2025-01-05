@@ -1,6 +1,6 @@
-<a class="title" href="/{{ taxonomy.name }}">
-  <h3>{{ taxonomy.name | capitalize }}</h3>
-</a>
+<h3>
+  <a class="title" href="/{{ taxonomy.name }}">{{ taxonomy.name | capitalize }}</a>
+</h3>
 <small>
   <div>
     {% set tags = get_taxonomy(kind="tags") %}

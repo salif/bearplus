@@ -30,14 +30,10 @@ a {
   color: var(--link);
 }
 
-.title {
+.title, .zola-anchor {
   text-decoration: none;
   border: 0;
   color: var(--text);
-
-  span {
-    font-weight: 400;
-  }
 }
 
 nav a {

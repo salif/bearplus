@@ -1,8 +1,8 @@
 <header>
   <div class="title-bar">
-    <a href="{{ config.base_url }}" class="title">
-      <h2>{{ config.title }}</h2>
-    </a>
+    <h2>
+      <a href="{{ config.base_url }}" class="title">{{ config.title }}</a>
+    </h2>
     {% if config.extra.theme_toggle | default(value=true) %}
       <button id="theme-toggle">●</button>
     {% endif %}
