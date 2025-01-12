@@ -1,10 +1,8 @@
 :root {
-  color-scheme: light dark;
   --background: white;
   --text: black;
   --link: royalblue;
   --pre-background: initial;
-  --pre-color: initial;
   --highlight-background: lightyellow;
   --border-color: gray;
 }
@@ -78,7 +76,6 @@ img {
 
 div.highlight pre {
   background-color: var(--pre-background) !important;
-  color: var(--pre-color);
 }
 
 div.highlight code {
