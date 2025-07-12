@@ -1,11 +1,11 @@
 <nav>
-  <a href="{{ config.base_url }}">Home</a>
+  <a href="{{ get_url(path=``) }}">Home</a>
   {%- if config.extra.main_menu %}
     {%- for item in config.extra.main_menu %}
       {%- if item.icon %}
-        <a href="{% if item.url is matching('^(https?://|mailto:)') %}{{ item.url }}{% else %}{{ get_url(path=item.url) }}{% endif %}"><i class="{{ item.icon }}" title="{{ item.name }}"></i></a>
+        <a href="{% if item.url is matching('^(https?://|mailto:)') %}{{ item.url | safe }}{% else %}{{ get_url(path=item.url) }}{% endif %}"><i class="{{ item.icon }}" title="{{ item.name }}"></i></a>
       {%- else %}
-        <a href="{% if item.url is matching('^(https?://|mailto:)') %}{{ item.url }}{% else %}{{ get_url(path=item.url) }}{% endif %}">{{ item.name }}</a>
+        <a href="{% if item.url is matching('^(https?://|mailto:)') %}{{ item.url | safe }}{% else %}{{ get_url(path=item.url) }}{% endif %}">{{ item.name }}</a>
       {%- endif %}
     {%- endfor %}
   {%- endif -%}

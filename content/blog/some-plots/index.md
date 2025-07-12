@@ -17,4 +17,4 @@ And here's a plot of the [Klein bottle immersed in three-dimensional space](http
 
 {{ echarts(js_file="klein_bottle.js" height="500px") }}
 
-You can see the source code to generate these plots in the [`content/blog/some-plots`](https://github.com/salcc/zola-bearplus/tree/main/content/blog/some-plots) directory of the theme's repository.
+You can see the source code to generate these plots in the [`content/blog/some-plots`](https://github.com/salif/bearplus/tree/main/content/blog/some-plots) directory of the theme's repository.

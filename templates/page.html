@@ -20,7 +20,7 @@
       {%- if page.date %}
         <p>
           <i>
-            <time datetime='{{ page.date | date(format='%+') }}'>
+            <time datetime="{{ page.date | date(format=`%+`) }}">
               {{- page.date | date(format=config.extra.post_date_format) -}}
             </time>
           </i>

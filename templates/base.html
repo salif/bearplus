@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{ lang | default(value="en-US" ) }}">
+<html lang="{{ lang | default(value=`en-US` ) }}">
 <head>
   {% if current_path %}
-    <link rel="canonical" href="{{ config.base_url }}{{ current_path }}">
+    <link rel="canonical" href="{{ current_url | safe }}">
   {% endif %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
         syntaxThemeStylesheetLink.type = "text/css";
         document.head.appendChild(syntaxThemeStylesheetLink);
       }
-      syntaxThemeStylesheetLink.href = "{{ config.base_url }}".replace(/&#x2F;/g, '/') + "/syntax-theme-" + theme + ".css";
+      syntaxThemeStylesheetLink.href = "{{ get_url(path=`/`) }}" + "/syntax-theme-" + theme + ".css";
       localStorage.setItem("theme", theme);
     }
 
@@ -26,10 +26,10 @@
     setTheme(theme);
   </script>
 
-  <link rel="stylesheet" type="text/css" href="{{ config.base_url }}/style.css">
+  <link rel="stylesheet" type="text/css" href="{{ get_url(path=`/style.css`, cachebust=true) }}">
 
+  {% if config.extra.theme_toggle | default (value = true) %}
   <script>
-    {% if config.extra.theme_toggle | default (value = true) %}
       document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("theme-toggle").addEventListener("click", function (event) {
           event.preventDefault();
@@ -37,8 +37,8 @@
           setTheme(theme);
         });
       });
-    {% endif %}
   </script>
+  {% endif %}
 
   {% if config.extra.favicon %}
     <link rel="shortcut icon" href="{{ config.extra.favicon }}">
@@ -49,7 +49,7 @@
   <meta name="title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}">
   {%- if config.generate_feed %}
     {% block rss -%}
-      <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="{{ config.title }}" href="{{ get_url(path=config.feed_filename) | safe }}">
+      <link rel="alternate" type="{% if config.feed_filename == `atom.xml` %}{{ 'application/atom+xml' }}{% else %}{{ 'application/rss+xml' }}{% endif %}" title="{{ config.title }}" href="{{ get_url(path=config.feed_filename) | safe }}">
     {%- endblock -%}
   {%- endif %}
 

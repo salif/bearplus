@@ -6,7 +6,7 @@ Minimalistic yet a bit featureful theme for the [Zola](https://www.getzola.org/)
 
 If you already have a Zola site on your machine, you can simply add this theme via
 ```
-git submodule add https://github.com/salcc/zola-bearplus themes/bearplus
+git submodule add https://github.com/salif/bearplus themes/bearplus
 ```
 
 ## Acknowledgements

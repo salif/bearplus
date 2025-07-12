@@ -1,6 +1,6 @@
 {% set chart_script = load_data(path=page.colocated_path ~ js_file, format="plain") %}
 
-<div id="{{ js_file }}" style="width: {{ width | default(value="100%") }}; height: {{ height | default(value="400px") }};"></div>
+<div id="{{ js_file }}" style="width: {{ width | default(value=`100%`) }}; height: {{ height | default(value=`400px`) }};"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"
   integrity="sha512-XSmbX3mhrD2ix5fXPTRQb2FwK22sRMVQTpBP2ac8hX7Dh/605hA2QDegVWiAvZPiXIxOV0CbkmUjGionDpbCmw=="
   crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>

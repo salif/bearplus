@@ -12,7 +12,7 @@
         <li>
           <span>
             <i>
-              <time datetime='{{ page.date | date(format='%+') }}'>
+              <time datetime="{{ page.date | date(format=`%+`) }}">
                 {{ page.date | date(format=config.extra.list_date_format) }}
               </time>
             </i>

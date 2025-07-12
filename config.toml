@@ -1,5 +1,5 @@
 title = "Zola Bear+ Theme"
-base_url = "https://theme.marçal.cc"
+base_url = "https://salif.github.io/zola-themes-collection/demo/bearplus/"
 description = "Minimalistic yet a bit featureful theme for the Zola static site generator."
 
 compile_sass = true
@@ -32,4 +32,4 @@ url = "@/blog/_index.md"
 [[extra.main_menu]]
 name = "GitHub"
 icon = "fa-brands fa-github"
-url = "https://github.com/salcc/zola-bearplus"
+url = "https://github.com/salif/bearplus"
